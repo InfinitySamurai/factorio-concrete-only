@@ -7,16 +7,11 @@ script.on_event(defines.events.on_built_entity, function(event)
 	
 	tileName = game.surfaces[1].get_tile(entityPos.x,entityPos.y).name
 	
-	if (tileName ~= "concrete" and tileName ~= "stone-brick") then
+	if (tileName ~= "concrete" and tileName ~= "stone-path") then
 		player.print("you must place on concrete or stone!")
 		player.insert{name = entity.name, count = 1}
 		entity.destroy()
 	end
-	
-	--[[
-	player.insert{name = "inserter", count = 1}
-	--]]
-
 end
 )
 
